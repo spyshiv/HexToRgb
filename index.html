@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="HexToRgbConverter">
+<head>
+	<title>HEX To RGB</title>
+	<script src="static/angular.min.js"></script>
+	<script src="static/angular.module.js"></script>
+	<style type="text/css">
+		body {
+			position: relative;
+			height: 100vh;
+			width: 100%;
+			overflow: hidden;
+		}
+		.logo{
+		    font-size: 34px;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		}
+		.input-boxes {
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			top: 50%;
+			left: 50%;
+			margin-left: -150px;
+			margin-top: -150px;
+		}
+
+		.developer {
+			position: absolute;
+			bottom: 2%;
+			width: 100%;
+			text-align: center;
+			font-size: 34px;
+		    line-height: 44px;
+		}
+		input {
+			color: #000;
+		    display: block;
+		    width: 300px;
+		    font-size: 34px;
+		    line-height: 44px;
+		    background:#fff;
+		    border: none;
+		    border-bottom: 1px dotted rgba(0,0,0,.4);
+		    padding: 5px 0;
+		    border-radius: 0; 
+		    text-align: center;
+		}
+		input[type="text"] { 
+		    outline: none;
+		}
+	</style>
+</head>
+<body ng-controller="convertController" style="background-color:{{hex_value}};">
+<div class="logo">
+	<p>H2R</p>
+</div>
+<div class="input-boxes">
+ 	<input id="enterValue" type="text" ng-model="hex_value" ng-keyup="CallHexToRgb(hex_value)" placeholder="HEX VALUE">
+ 	<input id="showValue" type="text" value="{{rgbValue}}" placeholder="RGB VALUE">
+</div>
+<div class="developer">
+	<a href="https://spyshiv.herokuapp.com" target="_blank">
+		<img src="static/icon.png">
+	</a>
+</div>
+</body>
+</html>
